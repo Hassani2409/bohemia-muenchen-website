@@ -70,6 +70,14 @@ const nextConfig = {
       };
     }
 
+    // Define global variables for server-side rendering
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        'typeof window': JSON.stringify('object'),
+        'typeof self': JSON.stringify('object'),
+      })
+    );
+
     // Add bundle analyzer in development
     if (!dev && !isServer) {
       const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -180,6 +188,12 @@ const nextConfig = {
   
   // React Strict Mode
   reactStrictMode: true,
+
+  // Disable SSR for problematic components
+  experimental: {
+    ...nextConfig.experimental,
+    esmExternals: 'loose',
+  },
   
   // ESLint Configuration - Allow warnings for deployment
   eslint: {
