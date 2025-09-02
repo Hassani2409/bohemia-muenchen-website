@@ -191,7 +191,7 @@ const nextConfig = {
 
   // Disable SSR for problematic components
   experimental: {
-    ...nextConfig.experimental,
+    optimizePackageImports: ['lucide-react', 'unsplash-js'],
     esmExternals: 'loose',
   },
   
