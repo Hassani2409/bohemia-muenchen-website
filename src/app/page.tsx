@@ -2,7 +2,7 @@ import { Star, UtensilsCrossed, ChefHat } from 'lucide-react';
 import DynamicHeroBackground, { HeroContent } from '@/components/DynamicHeroBackground';
 import FeaturedDishes from '@/components/FeaturedDishes';
 import Testimonials from '@/components/Testimonials';
-import AIChatbot from '@/components/AIChatbot';
+// import AIChatbot from '@/components/AIChatbot';
 
 export default function Home() {
   return (
@@ -240,7 +240,7 @@ export default function Home() {
       </section>
 
       {/* AI Chatbot */}
-      <AIChatbot />
+      {/* <AIChatbot /> */}
     </div>
   );
 }
