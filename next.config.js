@@ -60,6 +60,16 @@ const nextConfig = {
       },
     };
 
+    // Fix for "self is not defined" error
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+      };
+    }
+
     // Add bundle analyzer in development
     if (!dev && !isServer) {
       const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
