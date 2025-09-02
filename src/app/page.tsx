@@ -1,9 +1,3 @@
-import { Star, UtensilsCrossed, ChefHat } from 'lucide-react';
-// import DynamicHeroBackground, { HeroContent } from '@/components/DynamicHeroBackground';
-// import FeaturedDishes from '@/components/FeaturedDishes';
-// import Testimonials from '@/components/Testimonials';
-// import AIChatbot from '@/components/AIChatbot';
-
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -29,9 +23,7 @@ export default function Home() {
           {/* Google Rating */}
           <div className="bg-white/15 backdrop-blur-md rounded-3xl p-8 inline-block border border-white/20 mb-8">
             <div className="flex items-center justify-center space-x-2 mb-4">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
-              ))}
+              <span className="text-yellow-400 text-2xl">★★★★★</span>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-white mb-1">4.8</div>
@@ -45,15 +37,13 @@ export default function Home() {
               href="/reservierung"
               className="inline-flex items-center justify-center px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
-              <UtensilsCrossed className="w-5 h-5 mr-2" />
-              Jetzt reservieren
+              🍽️ Jetzt reservieren
             </a>
             <a
               href="/speisekarte"
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold rounded-lg transition-all duration-300 backdrop-blur-sm"
             >
-              <ChefHat className="w-5 h-5 mr-2" />
-              Speisekarte ansehen
+              👨‍🍳 Speisekarte ansehen
             </a>
           </div>
         </div>
@@ -276,9 +266,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="bg-white p-8 rounded-2xl shadow-lg">
               <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                ))}
+                <span className="text-yellow-400 text-xl">★★★★★</span>
               </div>
               <p className="text-gray-700 mb-4">"Authentische tschechische Küche! Das Svíčková war perfekt zubereitet."</p>
               <div className="font-semibold text-gray-900">Maria K.</div>
@@ -286,9 +274,7 @@ export default function Home() {
 
             <div className="bg-white p-8 rounded-2xl shadow-lg">
               <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                ))}
+                <span className="text-yellow-400 text-xl">★★★★★</span>
               </div>
               <p className="text-gray-700 mb-4">"Gemütliche Atmosphäre und hervorragender Service. Sehr empfehlenswert!"</p>
               <div className="font-semibold text-gray-900">Thomas M.</div>
@@ -296,9 +282,7 @@ export default function Home() {
 
             <div className="bg-white p-8 rounded-2xl shadow-lg">
               <div className="flex items-center mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                ))}
+                <span className="text-yellow-400 text-xl">★★★★★</span>
               </div>
               <p className="text-gray-700 mb-4">"Das beste tschechische Restaurant in München. Immer wieder gerne!"</p>
               <div className="font-semibold text-gray-900">Anna S.</div>
