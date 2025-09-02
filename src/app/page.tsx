@@ -1,5 +1,5 @@
 import { Star, UtensilsCrossed, ChefHat } from 'lucide-react';
-import DynamicHeroBackground, { HeroContent } from '@/components/DynamicHeroBackground';
+// import DynamicHeroBackground, { HeroContent } from '@/components/DynamicHeroBackground';
 import FeaturedDishes from '@/components/FeaturedDishes';
 import Testimonials from '@/components/Testimonials';
 // import AIChatbot from '@/components/AIChatbot';
@@ -7,17 +7,30 @@ import Testimonials from '@/components/Testimonials';
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section with Dynamic Background */}
-      <DynamicHeroBackground type="homepage" showFloatingElements={true}>
-        <HeroContent
-          title="Bohemia München"
-          subtitle="Authentische tschechische Küche im Herzen Münchens"
-        >
-          {/* Google Rating with Enhanced Animation */}
-          <div className="bg-white/15 backdrop-blur-md rounded-3xl p-8 inline-block border border-white/20 animate-scale-in-delay-1 hover:bg-white/20 transition-all duration-300">
+      {/* Hero Section - Simplified for Production */}
+      <section className="relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70 z-10"></div>
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')`
+          }}
+        ></div>
+
+        {/* Hero Content */}
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-2xl">
+            Bohemia München
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-amber-100 drop-shadow-lg max-w-2xl mx-auto">
+            Authentische tschechische Küche im Herzen Münchens
+          </p>
+          {/* Google Rating */}
+          <div className="bg-white/15 backdrop-blur-md rounded-3xl p-8 inline-block border border-white/20 mb-8">
             <div className="flex items-center justify-center space-x-2 mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 text-yellow-400 fill-current animate-star-glow" style={{animationDelay: `${i * 0.1}s`}} />
+                <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
               ))}
             </div>
             <div className="text-center">
@@ -27,10 +40,10 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/reservierung"
-              className="inline-flex items-center justify-center px-8 py-4 bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="inline-flex items-center justify-center px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               <UtensilsCrossed className="w-5 h-5 mr-2" />
               Jetzt reservieren
@@ -43,8 +56,8 @@ export default function Home() {
               Speisekarte ansehen
             </a>
           </div>
-        </HeroContent>
-      </DynamicHeroBackground>
+        </div>
+      </section>
 
       {/* Große Bildergalerie - Authentische tschechische Küche */}
       <section className="py-16 bg-gradient-to-b from-amber-50 to-white">
