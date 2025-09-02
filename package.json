@@ -3,25 +3,40 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev --port 3001",
+    "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint",
+    "analyze": "ANALYZE=true next build",
+    "type-check": "tsc --noEmit",
+    "build:analyze": "cross-env ANALYZE=true next build",
+    "postbuild": "next-sitemap",
+    "deploy": "vercel --prod"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.1",
+    "dotenv": "^17.2.1",
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.541.0",
+    "next": "15.5.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.0"
+    "react-hook-form": "^7.62.0",
+    "unsplash-js": "^7.0.19",
+    "zod": "^4.1.1"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20.19.11",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "cross-env": "^10.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.0",
-    "@eslint/eslintrc": "^3"
+    "next-sitemap": "^4.2.3",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "webpack-bundle-analyzer": "^4.10.2"
   }
 }

@@ -1,0 +1,18 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Host
+Host: https://bohemia-muenchen.vercel.app
+
+# Sitemaps
+Sitemap: https://bohemia-muenchen.vercel.app/sitemap.xml

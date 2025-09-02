@@ -1,36 +1,172 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Bohemia München - Tschechische Küche Website
 
-## Getting Started
+Eine moderne Next.js 14 Website für das authentische tschechische Restaurant Bohemia München in München.
 
-First, run the development server:
+## 🏗️ Projektübersicht
 
+Diese Website wurde entwickelt, um die veraltete Jimdo-Website von Bohemia München zu ersetzen und ein professionelles Online-Präsenz mit Online-Reservierungssystem zu bieten.
+
+### 🎯 Hauptziele
+- **Online-Reservierungssystem** implementieren (aktuell fehlend)
+- **Mobile-first Design** für lokale Suchen optimieren
+- **4.9/5 Google-Bewertung** prominent präsentieren
+- **Authentische tschechische Atmosphäre** im Design vermitteln
+- **Professionelle Alternative** zur aktuellen Jimdo-Website bieten
+
+## 🚀 Technologie-Stack
+
+- **Framework**: Next.js 14 mit App Router
+- **Sprache**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animationen**: Framer Motion
+- **Formulare**: React Hook Form + Zod Validierung
+- **Icons**: Lucide React
+- **Schriften**: Google Fonts (Playfair Display, Open Sans)
+
+## 🎨 Design-System
+
+### Farben
+- **Primärfarbe**: #8B4513 (Sattelbraun) - Wärme, Tradition
+- **Sekundärfarbe**: #F5E6D3 (Antikweiß) - Eleganz, Komfort
+- **Akzentfarbe**: #D2691E (Schokolade) - Energie, Appetit
+
+### Typografie
+- **Überschriften**: Playfair Display (Serif)
+- **Fließtext**: Open Sans (Sans-Serif)
+
+### Markenwerte
+- **Genuss** - Freude am Essen
+- **Tradition** - Erbe bewahren
+- **Gastfreundschaft** - Herzlicher Service
+- **Qualität** - Beste Zutaten
+
+## 📱 Seitenstruktur
+
+1. **Startseite** (`/`) - Hero-Bereich mit 4.9/5 Bewertung
+2. **Speisekarte** (`/speisekarte`) - Authentische tschechische Gerichte
+3. **Reservierung** (`/reservierung`) - Online-Reservierungssystem
+4. **Über Uns** (`/ueber-uns`) - Geschichte und Team
+5. **Kontakt** (`/kontakt`) - Adresse, Telefon, Kontaktformular
+
+## 🛠️ Installation & Entwicklung
+
+### Voraussetzungen
+- Node.js 18+ 
+- npm oder yarn
+
+### Setup
 ```bash
+# Repository klonen
+git clone [repository-url]
+cd bohemia-muenchen-website
+
+# Abhängigkeiten installieren
+npm install
+
+# Entwicklungsserver starten
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build & Deployment
+```bash
+# Produktionsbuild erstellen
+npm run build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Produktionsserver starten
+npm start
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Statischen Export (falls benötigt)
+npm run export
+```
 
-## Learn More
+## 🔧 Konfiguration
 
-To learn more about Next.js, take a look at the following resources:
+### Umgebungsvariablen
+Erstellen Sie eine `.env.local` Datei:
+```env
+NEXT_PUBLIC_SITE_URL=https://bohemia-muenchen.de
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=your_api_key_here
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Tailwind CSS
+Die Markenfarben sind in `tailwind.config.ts` definiert und können dort angepasst werden.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📊 Funktionen
 
-## Deploy on Vercel
+### ✅ Implementiert
+- Responsive Design (Mobile-first)
+- Navigation mit allen Hauptseiten
+- Hero-Bereiche mit Framer Motion Animationen
+- Speisekarte mit authentischen tschechischen Gerichten
+- Online-Reservierungssystem mit Formularvalidierung
+- Kontaktformular
+- SEO-optimierte Metadaten
+- Deutsche Lokalisierung
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🚧 Geplant für Produktion
+- Echte API-Integration für Reservierungen
+- E-Mail-Benachrichtigungen
+- Google Maps Integration
+- Analytics (Google Analytics, Google Search Console)
+- Performance-Optimierungen
+- SSL-Zertifikat
+- Domain-Konfiguration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📱 Responsive Design
+
+Die Website ist vollständig responsive und optimiert für:
+- **Mobile**: 320px - 768px
+- **Tablet**: 768px - 1024px  
+- **Desktop**: 1024px+
+
+## 🎯 SEO & Performance
+
+- **Meta-Tags** für alle Seiten
+- **Open Graph** für Social Media
+- **Strukturierte Daten** (Schema.org)
+- **Bildoptimierung** mit Next.js Image
+- **Lazy Loading** für bessere Performance
+
+## 🔒 Sicherheit
+
+- **Formularvalidierung** mit Zod
+- **CSRF-Schutz** (bei API-Integration)
+- **Input-Sanitization**
+- **HTTPS** (bei Produktions-Deployment)
+
+## 📈 Business Impact
+
+### Aktuelles Problem
+- **€22.500 monatlicher Umsatzverlust** durch veraltete Systeme
+- **Fehlendes Online-Reservierungssystem**
+- **Veraltete Jimdo-Website**
+
+### Erwartete Verbesserungen
+- **Online-Reservierungen** 24/7 verfügbar
+- **Bessere lokale Sichtbarkeit** durch moderne Website
+- **Erhöhte Konversion** durch professionelles Design
+- **Mobile Optimierung** für lokale Suchen
+
+## 🤝 Beitragen
+
+1. Fork des Repositories
+2. Feature-Branch erstellen (`git checkout -b feature/AmazingFeature`)
+3. Änderungen committen (`git commit -m 'Add some AmazingFeature'`)
+4. Branch pushen (`git push origin feature/AmazingFeature`)
+5. Pull Request erstellen
+
+## 📄 Lizenz
+
+Dieses Projekt ist für Bohemia München entwickelt. Alle Rechte vorbehalten.
+
+## 📞 Kontakt
+
+**Bohemia München**
+- **Adresse**: Am Lilienberg 5, 81669 München
+- **Telefon**: +49 89 20076057
+- **Website**: https://bohemiamunchen.jimdosite.com/ (aktuell)
+- **Neue Website**: In Entwicklung
+
+---
+
+**Entwickelt mit ❤️ für authentische tschechische Küche in München**

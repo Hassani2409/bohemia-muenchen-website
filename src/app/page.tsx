@@ -1,103 +1,246 @@
-import Image from "next/image";
+import { Star, UtensilsCrossed, ChefHat } from 'lucide-react';
+import DynamicHeroBackground, { HeroContent } from '@/components/DynamicHeroBackground';
+import FeaturedDishes from '@/components/FeaturedDishes';
+import Testimonials from '@/components/Testimonials';
+import AIChatbot from '@/components/AIChatbot';
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen">
+      {/* Hero Section with Dynamic Background */}
+      <DynamicHeroBackground type="homepage" showFloatingElements={true}>
+        <HeroContent
+          title="Bohemia München"
+          subtitle="Authentische tschechische Küche im Herzen Münchens"
+        >
+          {/* Google Rating with Enhanced Animation */}
+          <div className="bg-white/15 backdrop-blur-md rounded-3xl p-8 inline-block border border-white/20 animate-scale-in-delay-1 hover:bg-white/20 transition-all duration-300">
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-6 h-6 text-yellow-400 fill-current animate-star-glow" style={{animationDelay: `${i * 0.1}s`}} />
+              ))}
+            </div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white mb-1">4.8</div>
+              <div className="text-sm text-amber-100">Google Bewertungen</div>
+              <div className="text-xs text-amber-200 mt-1">Über 500 zufriedene Gäste</div>
+            </div>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4 mt-8">
+            <a
+              href="/reservierung"
+              className="inline-flex items-center justify-center px-8 py-4 bg-accent hover:bg-accent-dark text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              <UtensilsCrossed className="w-5 h-5 mr-2" />
+              Jetzt reservieren
+            </a>
+            <a
+              href="/speisekarte"
+              className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold rounded-lg transition-all duration-300 backdrop-blur-sm"
+            >
+              <ChefHat className="w-5 h-5 mr-2" />
+              Speisekarte ansehen
+            </a>
+          </div>
+        </HeroContent>
+      </DynamicHeroBackground>
+
+      {/* Große Bildergalerie - Authentische tschechische Küche */}
+      <section className="py-16 bg-gradient-to-b from-amber-50 to-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Authentische tschechische Küche
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Entdecken Sie die Vielfalt unserer traditionellen böhmischen Gerichte
+            </p>
+          </div>
+          
+          {/* Große Bildergalerie */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Svíčková na smetaně */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <img
+                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Svíčková na smetaně"
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold">Svíčková na smetaně</h3>
+                  <p className="text-sm">Tschechisches Nationalgericht</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Böhmischer Gulasch */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <img
+                src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Böhmischer Gulasch"
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold">Böhmischer Gulasch</h3>
+                  <p className="text-sm">Traditionell zubereitet</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Pilsner Urquell */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <img
+                src="https://images.unsplash.com/photo-1608039829572-78524f79c4c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Pilsner Urquell"
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold">Pilsner Urquell</h3>
+                  <p className="text-sm">Frisch gezapft</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Vepřo knedlo zelo */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <img
+                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Vepřo knedlo zelo"
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold">Vepřo knedlo zelo</h3>
+                  <p className="text-sm">Die heilige Dreifaltigkeit</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Trdelník */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <img
+                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Trdelník"
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold">Trdelník</h3>
+                  <p className="text-sm">Süßer Schornsteinkuchen</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Smažený řízek */}
+            <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+              <img
+                src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Smažený řízek"
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-4 text-white">
+                  <h3 className="text-xl font-bold">Smažený řízek</h3>
+                  <p className="text-sm">Goldbraun paniert</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="text-center mt-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button 
+                type="button"
+                className="px-8 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+              >
+                Speisekarte ansehen
+              </button>
+              <button 
+                type="button"
+                className="px-8 py-3 border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white font-semibold rounded-lg transition-all duration-300"
+              >
+                Jetzt reservieren
+              </button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Featured Dishes - Signature Spezialitäten */}
+      <FeaturedDishes />
+
+      {/* About Section */}
+      <section className="section-padding bg-white">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                Willkommen im Bohemia München
+              </h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Seit über 20 Jahren bringen wir Ihnen die authentischen Aromen der tschechischen Küche nach München.
+                Unsere traditionellen Rezepte werden von Generation zu Generation weitergegeben und mit frischen,
+                regionalen Zutaten zubereitet.
+              </p>
+              <p className="text-lg text-gray-600 mb-8">
+                Erleben Sie die Gemütlichkeit einer echten böhmischen Wirtschaft im Herzen Münchens.
+                Von herzhaften Hauptgerichten bis hin zu süßen Leckereien – bei uns finden Sie alles,
+                was die tschechische Küche zu bieten hat.
+              </p>
+            </div>
+            <div className="relative">
+              <img
+                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Bohemia München Restaurant Interior - Authentische tschechische Atmosphäre"
+                className="rounded-2xl shadow-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <Testimonials />
+
+      {/* Contact Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-8">
+            Besuchen Sie uns
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Adresse</h3>
+              <p className="text-gray-600">
+                Musterstraße 123<br />
+                80331 München
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Öffnungszeiten</h3>
+              <p className="text-gray-600">
+                Mo-Sa: 11:00 - 23:00<br />
+                So: 12:00 - 22:00
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Kontakt</h3>
+              <p className="text-gray-600">
+                Tel: +49 89 123456<br />
+                info@bohemia-muenchen.de
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Chatbot */}
+      <AIChatbot />
     </div>
   );
 }
