@@ -1,7 +1,7 @@
 import { Star, UtensilsCrossed, ChefHat } from 'lucide-react';
 // import DynamicHeroBackground, { HeroContent } from '@/components/DynamicHeroBackground';
-import FeaturedDishes from '@/components/FeaturedDishes';
-import Testimonials from '@/components/Testimonials';
+// import FeaturedDishes from '@/components/FeaturedDishes';
+// import Testimonials from '@/components/Testimonials';
 // import AIChatbot from '@/components/AIChatbot';
 
 export default function Home() {
@@ -184,8 +184,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Dishes - Signature Spezialitäten */}
-      <FeaturedDishes />
+      {/* Featured Dishes - Simplified */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Unsere Spezialitäten</h2>
+            <p className="text-xl text-gray-600">Authentische tschechische Gerichte, traditionell zubereitet</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <img
+                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Svíčková na smetaně"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Svíčková na smetaně</h3>
+                <p className="text-gray-600">Unser Nationalgericht - zartes Rindfleisch in cremiger Sauce</p>
+                <div className="text-amber-600 font-semibold mt-2">€18.50</div>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <img
+                src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Böhmischer Gulasch"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Böhmischer Gulasch</h3>
+                <p className="text-gray-600">Traditioneller Gulasch mit böhmischen Knödeln</p>
+                <div className="text-amber-600 font-semibold mt-2">€16.90</div>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <img
+                src="https://images.unsplash.com/photo-1608270586620-248524c67de9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                alt="Pilsner Urquell"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Pilsner Urquell</h3>
+                <p className="text-gray-600">Frisch gezapftes Original aus Pilsen</p>
+                <div className="text-amber-600 font-semibold mt-2">€4.20</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* About Section */}
       <section className="section-padding bg-white">
@@ -217,8 +265,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <Testimonials />
+      {/* Testimonials - Simplified */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Was unsere Gäste sagen</h2>
+            <p className="text-xl text-gray-600">Über 500 zufriedene Gäste haben uns bewertet</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="bg-white p-8 rounded-2xl shadow-lg">
+              <div className="flex items-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-700 mb-4">"Authentische tschechische Küche! Das Svíčková war perfekt zubereitet."</p>
+              <div className="font-semibold text-gray-900">Maria K.</div>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl shadow-lg">
+              <div className="flex items-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-700 mb-4">"Gemütliche Atmosphäre und hervorragender Service. Sehr empfehlenswert!"</p>
+              <div className="font-semibold text-gray-900">Thomas M.</div>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl shadow-lg">
+              <div className="flex items-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-700 mb-4">"Das beste tschechische Restaurant in München. Immer wieder gerne!"</p>
+              <div className="font-semibold text-gray-900">Anna S.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Contact Section */}
       <section className="section-padding bg-gray-50">
